@@ -15,7 +15,7 @@ VALUES
 SELECT * FROM posts; 
 
 
- CREATE TABLE categories(
+CREATE TABLE categories(
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
 description TEXT   
@@ -30,7 +30,7 @@ VALUES
 
  
 ALTER TABLE posts
- ADD category_id INT NOT NULL REFERENCES categories(id); 
+ADD category_id INT NOT NULL REFERENCES categories(id); 
  
 UPDATE posts
 SET category_id = (SELECT id FROM categories WHERE name = 'sport')

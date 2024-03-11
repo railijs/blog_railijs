@@ -13,9 +13,9 @@ $params = [":id" => $id];
 }
 
 if (isset($_GET["name"]) && $_GET["name"] != "") {
-    $name = $_GET["name"];
+    $name = ($_GET["name"]);
     $query .= " JOIN categories ON posts.category_id = categories.id WHERE categories.name = :name";
-    $params = [":name" => $_GET["name"]];
+    $params = [":name" => trim($_GET["name"])];
     }
 
 $db = new Database($config);
@@ -24,12 +24,12 @@ $posts = $db -> execute($query, $params)
 
 
  echo "<form>";
- echo "<input name='id'/>";
+ echo "<input name='id' value='" . ($_GET["id"] ?? "") . "'/>";
  echo "<button>Submit ID</button>";
  echo "</form>";
 
  echo "<form>";
- echo "<input name='name'/>";
+ echo "<input name='name' value='" . ($_GET["name"] ?? "") . "' />";
  echo "<button>Submit category</button>";
  echo "</form>";
 

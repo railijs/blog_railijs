@@ -2,6 +2,7 @@
 require "functions.php";
 require "Database.php";
 
+
 $config = require ("config.php");
 
 $query = "SELECT * FROM posts";
@@ -19,26 +20,9 @@ if (isset($_GET["name"]) && $_GET["name"] != "") {
     }
 
 $db = new Database($config);
+
 $posts = $db -> execute($query, $params) 
              -> fetchAll();
 
-
- echo "<form>";
- echo "<input name='id' value='" . ($_GET["id"] ?? "") . "'/>";
- echo "<button>Submit ID</button>";
- echo "</form>";
-
- echo "<form>";
- echo "<input name='name' value='" . ($_GET["name"] ?? "") . "' />";
- echo "<button>Submit category</button>";
- echo "</form>";
-
-
- echo "<h1>Posts</h1>";
-
-echo "<ul>";
-foreach($posts as $post) {
-    echo "<li>" . $post["title"] . "</li>";
-}
-echo "</ul>";
-?>
+             require "index.view.php";
+?>             

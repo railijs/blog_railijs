@@ -1,0 +1,33 @@
+body {
+  background-color: #31473a;
+}
+
+p {
+  color: #fcf6f5;
+}
+
+ul {
+  color: #fcf6f5;
+}
+
+h1 {
+  color: #fcf6f5;
+}
+
+a {
+  color: #fcf6f5;
+}
+
+header {
+  background-color: #42805c;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

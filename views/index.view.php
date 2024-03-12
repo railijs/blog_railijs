@@ -1,3 +1,6 @@
+<?php require "components/heads.php" ?>
+<?php require "components/navbar.php" ?>
+
 <form>
  <input name='id' value='<?= ($_GET["id"] ?? "") ?>'/>
  <button>Submit ID</button>
@@ -15,3 +18,6 @@
   <li> <?= $post["title"]?> </li>
 <?php } ?>
 </ul>
+
+<?php require "components/footer.php" ?>
+

@@ -1,6 +1,6 @@
 <?php
 
 $title = "About Gang";
-require "views/about.view.php"
+require "views/about.view.php";
 
 ?>

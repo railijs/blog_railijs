@@ -1,29 +1,20 @@
-<?php
+<?php 
+
 require "functions.php";
-require "Database.php";
+$url_array = parse_url($_SERVER["REQUEST_URI"]);
+$url = ($_SERVER["REQUEST_URI"]);
 
 
-$config = require ("config.php");
 
-$query = "SELECT * FROM posts";
-$params = [];
-if (isset($_GET["id"]) && $_GET["id"] != "") {
-$id = $_GET["id"];
-$query .= " WHERE id = :id";
-$params = [":id" => $id];
+//ja cilveks dodas uz about route, tad gribam paradit /controllers/about.php
+if($url == "/about") {
+    require "controllers/about.php";   
 }
 
-if (isset($_GET["name"]) && $_GET["name"] != "") {
-    $name = ($_GET["name"]);
-    $query .= " JOIN categories ON posts.category_id = categories.id WHERE categories.name = :name";
-    $params = [":name" => trim($_GET["name"])];
-    }
+if($url == "/") {
+    require "controllers/index.php";    
+}
 
-$db = new Database($config);
-
-$posts = $db -> execute($query, $params) 
-             -> fetchAll();
-
-$title = "Posts";             
-
-require "views/index.view.php";
+if($url == "/story") {
+    require "controllers/story.php";    
+}

@@ -9,12 +9,11 @@ $url = ($_SERVER["REQUEST_URI"]);
 //ja cilveks dodas uz about route, tad gribam paradit /controllers/about.php
 if($url == "/about") {
     require "controllers/about.php";   
-}
-
-if($url == "/") {
+} else if ($url == "/") {
     require "controllers/index.php";    
-}
-
-if($url == "/story") {
+} else if ($url == "/story") {
     require "controllers/story.php";    
+} else {
+    http_response_code(404);
+    require "controllers/404.php";
 }

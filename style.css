@@ -1,5 +1,11 @@
 body {
   background-color: #31473a;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
 }
 
 p {
@@ -21,13 +27,19 @@ a {
 header {
   background-color: #42805c;
   height: 30px;
+  width: 100vw;
   display: flex;
   align-items: center;
   border-radius: 2px;
+  position: fixed;
+
+  top: 0;
+  left: 0;
 }
 
 nav {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin: 15px;
 }

@@ -25,4 +25,4 @@ $posts = $db -> execute($query, $params)
 
 $title = "Posts";             
 
-require "views/index.view.php";
+require "views/posts.view.php";

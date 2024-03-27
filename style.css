@@ -1,10 +1,15 @@
+:root {
+  color: white;
+}
+
 body {
-  background-color: #31473a;
+  background-color: #1a0129;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   padding-top: 30px;
 }
 
@@ -25,9 +30,11 @@ a {
 }
 
 header {
-  background-color: #42805c;
+  background-color: #3a025b;
+
   height: 30px;
   width: 100vw;
+
   display: flex;
   align-items: center;
   border-radius: 2px;
@@ -42,4 +49,17 @@ nav {
   width: 100%;
   justify-content: space-between;
   margin: 15px;
+}
+
+label {
+  position: relative;
+  display: inline-block;
+}
+
+.invalid-data {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  color: red;
+  font-size: 1.2em;
 }

@@ -63,3 +63,13 @@ label {
   color: red;
   font-size: 1.2em;
 }
+
+.delete-form {
+  display: inline-block;
+}
+
+.delete-button {
+  background-color: rgb(249, 49, 49);
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+}

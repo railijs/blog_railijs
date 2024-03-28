@@ -1,5 +1,5 @@
-<?php require "components/heads.php" ?>
-<?php require "components/navbar.php" ?>
+<?php require "views/components/heads.php" ?>
+<?php require "views/components/navbar.php" ?>
 
 
 <h1>Create a Post</h1>
@@ -27,4 +27,4 @@
 
 
 
-<?php require "components/footer.php" ?>
+<?php require "views/components/footer.php" ?>

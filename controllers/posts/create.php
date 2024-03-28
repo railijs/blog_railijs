@@ -42,6 +42,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 $title = "Create a post";
-require "views/posts-create.view.php";
+require "views/posts/create.view.php";
 
 

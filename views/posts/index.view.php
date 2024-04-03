@@ -13,14 +13,16 @@
 
 <h1>Posts</h1>
 
+
 <ul>
 <?php foreach($posts as $post) { ?>
   <li>
-    <?= htmlspecialchars($post["title"])?>
+  <a href="/show?id=<?= $post["id"] ?> "><?= htmlspecialchars($post["title"])?><a/>
     <form class="delete-form" method="POST" action="/delete"><button class="delete-button" name="id" value="<?= $post["id"] ?>" >Delete</button></form>
-  </li>
+  </li> 
 <?php } ?>
 </ul>
+</a>
 
 <?php require "views/components/footer.php" ?>
 

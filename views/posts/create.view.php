@@ -6,9 +6,9 @@
 
 <form method="POST">
     <label style="color: white;">Title:
-        <input name="matiss" value="<?= $_POST["title"] ?? "" ?>"/>
+        <input name="title" value="<?= $_POST["title"] ?? "" ?>"/>
         <?php if (isset($errors["matiss"])) { ?>
-            <p class="invalid-data"><?= $errors["matiss"] ?></p>
+            <p class="invalid-data"><?= $errors["title"] ?></p>
             <?php } ?>
     </label>
     <br/>
@@ -18,8 +18,8 @@
             <p class="invalid-data"><?= $errors["category-id"] ?></p>
             <?php } ?>
             <option value="1">sport</option>
-            <option value="2">food</option>
-            <option value="3">music</option>
+            <option value="2">music</option>
+            <option value="3">food</option>
         </select>
     </label>
     <button>Save</button>

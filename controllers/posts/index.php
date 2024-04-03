@@ -4,7 +4,7 @@ require "Database.php";
 
 $config = require ("config.php");
 
-$query = "SELECT * FROM posts";
+$query = "SELECT posts.* FROM posts";
 $params = [];
 
 if (isset($_GET["id"]) && $_GET["id"] != "") {

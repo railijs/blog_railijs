@@ -10,16 +10,16 @@ $params = [];
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
-    if(trim($_POST["matiss"] == "")) {
-        $errors["matiss"] = "Title cannot be empty";
+    if(trim($_POST["title"] == "")) {
+        $errors["title"] = "Title cannot be empty";
     }
 
     if ($_POST["category-id"] < 1 || $_POST["category-id"] > 3) {
-        $errors["matiss"] = "Category-Id invalid";
+        $errors["title"] = "Category-Id invalid";
     }
 
-    if(strlen($_POST["matiss"]) > 255) {
-        $errors["matiss"] = "Title cannot be longer than 255 characters";
+    if(strlen($_POST["title"]) > 255) {
+        $errors["title"] = "Title cannot be longer than 255 characters";
     }
 
     if(empty($errors)) {
@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "INSERT INTO posts (title, category_id)
                 VALUES (:title, :category_id);";
         $params = [
-            ":title" => $_POST["matiss"], 
+            ":title" => $_POST["title"], 
             ":category_id" => $_POST["category-id"]
         ];
 

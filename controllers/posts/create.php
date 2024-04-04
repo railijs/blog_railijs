@@ -1,25 +1,23 @@
 <?php
+require "Validator.php";
 require "Database.php";
+
 $config = require ("config.php");
 $db = new Database($config);
 
 $query = "SELECT * FROM posts";
 $params = [];
 
-// if($_SERVER["REQUEST_METHOD"] == "POST" && trim($_POST["matiss"] != "") != "" && $_POST["category_id"] <=3 && strlen($_POST["matiss"]) <= 255) {
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
-    if(trim($_POST["title"] == "")) {
-        $errors["title"] = "Title cannot be empty";
+    if(!Validator::string($_POST["title"], min: 1, max: 255)) {
+        $errors["title"] = "Title cannot be empty or too long";
     }
 
     if ($_POST["category-id"] < 1 || $_POST["category-id"] > 3) {
-        $errors["title"] = "Category-Id invalid";
-    }
-
-    if(strlen($_POST["title"]) > 255) {
-        $errors["title"] = "Title cannot be longer than 255 characters";
+        $errors["category-id"] = "Category-Id invalid";
     }
 
     if(empty($errors)) {

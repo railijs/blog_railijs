@@ -7,7 +7,7 @@
 <form method="POST">
     <label style="color: white;">Title:
         <input name="title" value="<?= $_POST["title"] ?? "" ?>"/>
-        <?php if (isset($errors["matiss"])) { ?>
+        <?php if (isset($errors["title"])) { ?>
             <p class="invalid-data"><?= $errors["title"] ?></p>
             <?php } ?>
     </label>
